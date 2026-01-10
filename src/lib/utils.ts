@@ -9,9 +9,12 @@ export function cn(...inputs: ClassValue[]) {
 export function scrollTo(element: Element | null) {
   if (!element) return;
 
-  element.scrollIntoView({
+  const navbarHeight = 100; // Hauteur de la navbar + un peu d'espace
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+  window.scrollTo({
+    top: offsetPosition,
     behavior: "smooth",
-    block: "center",
-    inline: "center",
   });
 }

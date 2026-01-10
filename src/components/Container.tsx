@@ -37,11 +37,11 @@ const variants = {
 };
 
 const navLinks = [
-  { href: "#home", text: "Home" },
-  { href: "#about", text: "About" },
-  { href: "#projects", text: "Projects" },
+  { href: "#home", text: "Acceuil" },
+  { href: "#about", text: "A propos" },
+  { href: "#projects", text: "Projets" },
   { href: "#services", text: "Services" },
-  { href: "#contact", text: "Contact" },
+  { href: "#contact", text: "Contacte" },
 ];
 
 function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -67,7 +67,7 @@ function NavItem(props: NavProps) {
       <a
         href={props.href}
         onClick={handleClick}
-        className={cn(props.i === 0 && "nav-active", "nav-link")}
+        className="nav-link"
       >
         {props.text}
       </a>

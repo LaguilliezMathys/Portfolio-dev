@@ -28,9 +28,9 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
 const aboutStats = [
-  { label: "Years of experience", value: "3+" },
-  { label: "Technologies mastered", value: "5+" },
-  { label: "Companies worked with", value: "15+" },
+  { label: "Années d'expérience", value: "3+" },
+  { label: "Technologies maîtrisées", value: "7+" },
+  { label: "Projets académiques réalisés", value: "10+" },
 ];
 
 const projects = [
@@ -68,33 +68,33 @@ const projects = [
 
 const services = [
   {
-    service: "Frontend Development",
+    service: "Développement Web Full-Stack",
     description:
-      "Creating stellar user interfaces and web experiences using the latest technologies.",
+      "Création d'applications web avec Angular, Symfony, PHP et HTML dans le cadre de projets académiques.",
     icon: Code2,
   },
   {
-    service: "UX Design",
+    service: "Programmation Orientée Objet",
     description:
-      "Building intuitive, user-centric designs that drive engagement and conversion.",
+      "Développement d'applications Java et C++ avec architecture modulaire et bonnes pratiques de conception.",
     icon: Frame,
   },
   {
-    service: "SEO Optimization",
+    service: "Bases de Données",
     description:
-      "Enhancing your website's visibility in search engines for increased organic traffic.",
+      "Conception / Gestion de bases de données, optimisation de requêtes et modélisation.",
     icon: SearchCheck,
   },
   {
-    service: "Responsive Design",
+    service: "Développement Mobile & Responsive",
     description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
+      "Création d'interfaces adaptatives pour tous types d'appareils avec des frameworks modernes.",
     icon: MonitorSmartphone,
   },
   {
-    service: "Backend Development",
+    service: "Gestion de Projets",
     description:
-      "Developing robust, scalable server-side logic for a wide range of web applications.",
+      "Travail en équipe avec méthodologies agiles. Utilisation de Git et d'outils collaboratifs.",
     icon: Eye,
   },
 ];
@@ -120,27 +120,31 @@ export default function Home() {
     }
 
     function handleScroll() {
-      let current = "";
       setIsScrolled(window.scrollY > 0);
+
+      let current = "home"; // Par défaut sur home
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 250) {
-          current = section.getAttribute("id") ?? "";
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          current = section.getAttribute("id") ?? "home";
         }
       });
 
-      navLinks.forEach((li) => {
-        li.classList.remove("nav-active");
-
-        if (li.getAttribute("href") === `#${current}`) {
-          li.classList.add("nav-active");
-          console.log(li.getAttribute("href"));
+      navLinks.forEach((link) => {
+        link.classList.remove("nav-active");
+        const href = link.getAttribute("href");
+        if (href === `#${current}`) {
+          link.classList.add("nav-active");
         }
       });
     }
 
     void getLocomotive();
+    handleScroll(); // Call once on mount
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -202,11 +206,11 @@ export default function Home() {
                 data-scroll-direction="horizontal"
               >
                 <span className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
-                  Hello, I&apos;m
+                  Bonjour, je suis
                   <br />
                 </span>
                 <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  WendoJ.
+                  Laguilliez Mathys.
                 </span>
               </h1>
               <p
@@ -215,8 +219,7 @@ export default function Home() {
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                An experienced full-stack website developer with a passion for
-                crafting unique digital experiences.
+                Un développeur junior en quête de nouvelles opportunités
               </p>
             </div>
             <span
@@ -225,16 +228,16 @@ export default function Home() {
               data-scroll-speed=".06"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
-              <Link href="mailto:wendoj@proton.me" passHref>
+              <Link href="mailto:laguilliez.mathys@gmail.com" passHref>
                 <Button>
-                  Get in touch <ChevronRight className="ml-1 h-4 w-4" />
+                  Contactez-moi <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
               <Button
                 variant="outline"
                 onClick={() => scrollTo(document.querySelector("#about"))}
               >
-                Learn more
+                En savoir plus
               </Button>
             </span>
 
@@ -244,7 +247,7 @@ export default function Home() {
                 isScrolled && styles["scroll--hidden"],
               )}
             >
-              Scroll to discover{" "}
+              Faites défiler pour découvrir{" "}
               <TriangleDownIcon className="mt-1 animate-bounce" />
             </div>
           </div>
@@ -254,7 +257,7 @@ export default function Home() {
             id={styles["canvas-container"]}
             className="mt-14 h-full w-full xl:mt-0"
           >
-            <Suspense fallback={<span>Loading...</span>}>
+            <Suspense fallback={<span>Chargement...</span>}>
               <Spline scene="/assets/scene.splinecode" />
             </Suspense>
           </div>
@@ -269,19 +272,16 @@ export default function Home() {
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
             <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-              I&apos;m an experienced full-stack developer proficient in{" "}
+              Je suis un développeur junior, compétent en{" "}
               <Link
                 href="https://create.t3.gg/"
                 target="_blank"
                 className="underline"
               >
-                TypeScript, Tailwind, and Next.js
+                TypeScript, Next.js, Angular, Java, C, C++, SQL et bien plus encore.  
               </Link>{" "}
-              since 2021. My experience spans from startups to mid-sized
-              companies, where I&apos;ve been instrumental in the entire product
-              design process; from ideation and wireframing, through
-              prototyping, to the delivery of the final product, all while
-              efficiently collaborating with cross-functional teams.
+              Actuellement en 3ème année de BUT Informatique à l'IUT de Blagnac, je développe mes compétences à travers divers projets académiques et personnels. 
+              Passionné par le développement web et logiciel, je cherche constamment à apprendre de nouvelles technologies et à relever de nouveaux défis.
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
@@ -320,14 +320,13 @@ export default function Home() {
           </div>
           <div data-scroll data-scroll-speed=".4" className="my-64">
             <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
-              ✨ Projects
+              ✨ Projets
             </span>
             <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              Streamlined digital experiences.
+              Expériences numériques épurées.
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;ve worked on a variety of projects, from small websites to
-              large-scale web applications. Here are some of my favorites:
+              J&apos;ai travaillé sur une variété de projets, des petits sites web aux applications web de grande envergure. Voici quelques-uns de mes favoris :
             </p>
 
             {/* Carousel */}
@@ -401,15 +400,14 @@ export default function Home() {
             >
               <div className="flex flex-col py-6 xl:p-6">
                 <h2 className="text-4xl font-medium tracking-tight">
-                  Need more info?
+                  Besoin de plus d'infos ?
                   <br />
                   <span className="text-gradient clash-grotesk tracking-normal">
-                    I got you.
+                    C'est par ici.
                   </span>
                 </h2>
                 <p className="mt-2 tracking-tighter text-secondary-foreground">
-                  Here are some of the services I offer. If you have any
-                  questions, feel free to reach out.
+                  Voici quelques-unes de mes compétences. Si vous avez des questions, n'hésitez pas à me contacter.
                 </p>
               </div>
               {services.map((service) => (
@@ -439,15 +437,14 @@ export default function Home() {
             className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24"
           >
             <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
-              Let&apos;s work{" "}
-              <span className="text-gradient clash-grotesk">together.</span>
+              Travaillons{" "}
+              <span className="text-gradient clash-grotesk">ensemble.</span>
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;m currently available for freelance work and open to
-              discussing new projects.
+              Je suis actuellement à la recherche d'un stage et ouvert à toute opportunité professionnelle.
             </p>
-            <Link href="mailto:wendoj@proton.me" passHref>
-              <Button className="mt-6">Get in touch</Button>
+            <Link href="mailto:laguilliez.mathys@gmail.com" passHref>
+              <Button className="mt-6">Me contacter</Button>
             </Link>
           </div>
         </section>
