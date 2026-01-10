@@ -35,16 +35,16 @@ const aboutStats = [
 
 const projects = [
   {
-    title: "Unqueue",
-    description: "E-commerce platform for selling digital products",
-    image: "/assets/unqueue.webm",
-    href: "https://unqueue.shop/",
+    title: "Woohp",
+    description: "Plateforme e-commerce pour la vente de produits d'espionnage",
+    image: "/assets/Woohp.webm",
+    href: "https://woohp.rf.gd",
   },
   {
-    title: "InfiniteVPS",
-    description: "High performance VPS hosting solution",
+    title: "CAS Raviv",
+    description: "Développement d'un pour l'association Raviv",
     image: "/assets/infinitevps.webm",
-    href: "#",
+    href: "https://github.com/AlbiMousse/sae-raviv-5.A.01",
   },
   {
     title: "TranslateBot",
