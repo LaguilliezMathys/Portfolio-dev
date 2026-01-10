@@ -280,7 +280,7 @@ export default function Home() {
               >
                 TypeScript, Next.js, Angular, Java, C, C++, SQL et bien plus encore.  
               </Link>{" "}
-              Actuellement en 3ème année de BUT Informatique à l'IUT de Blagnac, je développe mes compétences à travers divers projets académiques et personnels. 
+              Actuellement en 3ème année de BUT Informatique à l&apos;IUT de Blagnac, je développe mes compétences à travers divers projets académiques et personnels. 
               Passionné par le développement web et logiciel, je cherche constamment à apprendre de nouvelles technologies et à relever de nouveaux défis.
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
@@ -400,14 +400,14 @@ export default function Home() {
             >
               <div className="flex flex-col py-6 xl:p-6">
                 <h2 className="text-4xl font-medium tracking-tight">
-                  Besoin de plus d'infos ?
+                  Besoin de plus d&apos;infos ?
                   <br />
                   <span className="text-gradient clash-grotesk tracking-normal">
-                    C'est par ici.
+                    C&apos;est par ici.
                   </span>
                 </h2>
                 <p className="mt-2 tracking-tighter text-secondary-foreground">
-                  Voici quelques-unes de mes compétences. Si vous avez des questions, n'hésitez pas à me contacter.
+                  Voici quelques-unes de mes compétences. Si vous avez des questions, n&apos;hésitez pas à me contacter.
                 </p>
               </div>
               {services.map((service) => (
@@ -441,7 +441,7 @@ export default function Home() {
               <span className="text-gradient clash-grotesk">ensemble.</span>
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              Je suis actuellement à la recherche d'un stage et ouvert à toute opportunité professionnelle.
+              Je suis actuellement à la recherche d&apos;un stage et ouvert à toute opportunité professionnelle.
             </p>
             <Link href="mailto:laguilliez.mathys@gmail.com" passHref>
               <Button className="mt-6">Me contacter</Button>
