@@ -323,10 +323,10 @@ export default function Home() {
               ✨ Projets
             </span>
             <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              Expériences numériques épurées.
+              Projet Accadémique.
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              J&apos;ai travaillé sur une variété de projets, des petits sites web aux applications web de grande envergure. Voici quelques-uns de mes favoris :
+              J&apos;ai travaillé sur une variété de projets, des petits sites web aux applications web. Voici quelques-uns des projets les plus notables que j&apos;ai réalisés au cours de mes études :
             </p>
 
             {/* Carousel */}
@@ -374,7 +374,7 @@ export default function Home() {
                 <span className="font-semibold">
                   {current} / {count}
                 </span>{" "}
-                projects
+                projets
               </div>
             </div>
           </div>

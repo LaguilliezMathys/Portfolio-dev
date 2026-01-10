@@ -40,7 +40,7 @@ const navLinks = [
   { href: "#home", text: "Acceuil" },
   { href: "#about", text: "A propos" },
   { href: "#projects", text: "Projets" },
-  { href: "#services", text: "Services" },
+  { href: "#services", text: "Compétances" },
   { href: "#contact", text: "Contacte" },
 ];
 
@@ -83,8 +83,8 @@ export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Wendo",
-    description: `Full-stack website developer and TypeScript enthusiast.`,
+    title: "Laguilliez Mathys - Dev",
+    description: `Développeur et passionné.`,
     image: "/assets/logo.webp",
     type: "website",
     ...customMeta,
@@ -128,12 +128,12 @@ export default function Container(props: ContainerProps) {
           href={`https://www.wendoj.codes${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="WendoJ" />
+        <meta property="og:site_name" content="Laguilliez Mathys" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="WendoJ" />
+        <meta name="twitter:site" content="Laguilliez Mathys" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
@@ -158,13 +158,13 @@ export default function Container(props: ContainerProps) {
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">Ouvrir le menu principal</span>
             <MenuIcon data-hide={isOpen} />
             <CrossIcon data-hide={!isOpen} />
           </button>
         </div>
         <Link href="/">
-          <span className="text-lg font-semibold">wendo</span>
+          <span className="text-lg font-semibold">Laguilliez Mathys</span>
         </Link>
 
         {/* Desktop menu */}
@@ -199,7 +199,7 @@ export default function Container(props: ContainerProps) {
                   aria-controls="mobile-menu"
                   aria-expanded="false"
                 >
-                  <span className="sr-only">Open main menu</span>
+                  <span className="sr-only">Ouvrir le menu principal</span>
                   <CrossIcon data-hide={!isOpen} />
                 </button>
               </div>
@@ -221,7 +221,7 @@ export default function Container(props: ContainerProps) {
                 {/* Footer */}
                 <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
                   <span className="text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} wendo. All rights reserved.
+                    © {new Date().getFullYear()} Laguilliez Mathys. Tous droits réservés.
                   </span>
                 </div>
               </div>
