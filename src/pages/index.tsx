@@ -42,7 +42,7 @@ const projects = [
   },
   {
     title: "CAS Raviv",
-    description: "Développement d'un pour l'association Raviv",
+    description: "Développement d'un CAS pour l'association Raviv",
     image: "/assets/infinitevps.webm",
     href: "https://github.com/AlbiMousse/sae-raviv-5.A.01",
   },
