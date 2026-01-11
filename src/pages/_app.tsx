@@ -1,4 +1,5 @@
 import { type AppType } from "next/dist/shared/lib/utils";
+import { useEffect } from "react";
 
 import "@/styles/globals.css";
 import "@/styles/locomotive-scroll.css";
@@ -11,6 +12,25 @@ const dmSans = DM_Sans({
 });
 
 const MyApp: AppType = ({ Component, pageProps }) => {
+  useEffect(() => {
+    // Supprimer les warnings WebGL de Three.js/Spline
+    const originalWarn = console.warn;
+    console.warn = (...args) => {
+      if (
+        typeof args[0] === "string" &&
+        (args[0].includes("THREE.WebGLProgram") ||
+          args[0].includes("use of potentially uninitialized variable"))
+      ) {
+        return;
+      }
+      originalWarn.apply(console, args);
+    };
+
+    return () => {
+      console.warn = originalWarn;
+    };
+  }, []);
+
   return (
     <div lang={"en"} className={dmSans.className}>
       <Component {...pageProps} />
